@@ -5,6 +5,7 @@ import interfaces.IAnagramGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /** Implements the inteface IAnagramGenerator and generates an AnagramDTO object
@@ -19,6 +20,10 @@ public class AnagramGeneratorImpl implements IAnagramGenerator{
 
     @Override
     public AnagramDTO createAnagrams() {
-        return anagramDTO; // TODO ???
+        String word = "TEST";
+        List<String> listTest = new LinkedList<>();
+        listTest.add("This is a value test 1");
+        listTest.add("This is a value test 2");
+        return new AnagramDTO(word, listTest);
     }
 }
