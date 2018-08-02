@@ -18,7 +18,7 @@ public class AnagramGeneratorImpl implements IAnagramGenerator{
     AnagramDTO anagramDTO;
 
     @Override
-    public AnagramDTO createAnagrams(String word, List<String> generatedAnagrams) {
+    public AnagramDTO createAnagrams() {
         return anagramDTO; // TODO ???
     }
 }
