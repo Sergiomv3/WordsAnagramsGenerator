@@ -1,26 +1,45 @@
-package hello;
+package main;
+
+import utils.TreeNode;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
-public class Anagrams {
+/**  AnagramGenerator contains the logic to find the properly anagrams of given word/s
+ * @author Sergio Martin
+ * @version 1.0
+ */
+public class AnagramGenerator {
 
+    /*The word introduced by user (GET method)*/
     private String word;
-    private List<String> listAnagrams = new LinkedList<>();
-    private int lenghtOriginalWord;
 
+    /*The list of generated anagrams*/
+    private List<String> listAnagrams;
 
-    public Anagrams(String word) throws FileNotFoundException {
+    /*The lenght of the word introduced*/
+    private int lengthOfWordIntroduced;
+
+    /*The TreeNode object*/
+    private TreeNode root = new TreeNode();
+
+    /**
+     * Instantiates an AnagramGenerator object
+     * @param word the word introduced in the input field (GET method)
+     */
+    public AnagramGenerator(String word) {
         this.word = word;
-        generateAnagrams();
     }
 
+    /**
+     * Gets the word that have been introduced
+     * @return the word introduced
+     */
     public String getWord() {
         return word;
     }
 
-    private TreeNode root = new TreeNode();
 
     public List<String> getListAnagrams() {
         return listAnagrams;
@@ -36,7 +55,7 @@ public class Anagrams {
         for (int i = 0; i < value.length(); i++) {
             node = node.add(value.charAt(i), node);
         }
-        node.word = true;
+        node.setWord(true);
     }
 
     private boolean exists(String value) {
@@ -48,13 +67,15 @@ public class Anagrams {
                 return false;
             }
         }
-        return node.word;
+        return node.isWord();
     }
 
     public void generateAnagrams() throws FileNotFoundException {
+        listAnagrams = new LinkedList<>();
+        root = new TreeNode();
         // Read the file using whitespace as a delimiter (default)
         // so that the input will be split into words
-        Scanner file = new Scanner(new File("src\\main\\java\\hello\\anagramDic.txt"));
+        Scanner file = new Scanner(new File("src\\main\\java\\main\\anagramDic.txt"));
 
         Set<String> dictionary = new HashSet<>();
         Map<String, List<String>> indexedDictionary = new HashMap<>();
@@ -95,7 +116,7 @@ public class Anagrams {
         word = word.toLowerCase();
         word = word.replace(" ", "");
         word = word.replaceAll("[^a-zA-Z]+", "");
-        lenghtOriginalWord = word.length();
+        lengthOfWordIntroduced = word.length();
         //INDEXO EL DICCIONARIO
         char[] chars = word.toCharArray();
         Arrays.sort(chars);
@@ -219,7 +240,7 @@ public class Anagrams {
                         iterator.remove();
                     }
                 }
-                if ((key.length() + auxLastWordIndexed.length()) == lenghtOriginalWord) {
+                if ((key.length() + auxLastWordIndexed.length()) == lengthOfWordIntroduced) {
                     List<String> listA = lastDictionary.get(key);
                     List<String> listB = auxLastDictionary.get(auxLastWordIndexed);
                     if (listA != null && listB != null) {

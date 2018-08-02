@@ -1,4 +1,4 @@
-package hello;
+package utils;
 
 import java.util.HashMap;
 
@@ -7,7 +7,15 @@ import java.util.HashMap;
  * @author smarti42
  */
 public class TreeNode {
-    boolean word;
+    public boolean isWord() {
+        return word;
+    }
+
+    public void setWord(boolean word) {
+        this.word = word;
+    }
+
+    private boolean word;
     HashMap<Character, TreeNode> children = new HashMap<>();
 
     public TreeNode get(char value) {

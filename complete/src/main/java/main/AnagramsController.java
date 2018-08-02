@@ -1,7 +1,4 @@
-package hello;
-
-import java.io.FileNotFoundException;
-import java.util.concurrent.atomic.AtomicLong;
+package main;
 
 import dto.AnagramDTO;
 import org.springframework.web.bind.annotation.RequestMapping;
