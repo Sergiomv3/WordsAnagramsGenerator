@@ -2,9 +2,11 @@ package services;
 
 import dto.AnagramDTO;
 import interfaces.IAnagramGenerator;
+import main.AnagramGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.FileNotFoundException;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -19,11 +21,13 @@ public class AnagramGeneratorImpl implements IAnagramGenerator{
     AnagramDTO anagramDTO;
 
     @Override
-    public AnagramDTO createAnagrams() {
-        String word = "TEST";
-        List<String> listTest = new LinkedList<>();
-        listTest.add("This is a value test 1");
-        listTest.add("This is a value test 2");
-        return new AnagramDTO(word, listTest);
+    public AnagramDTO createAnagrams(String word) {
+        AnagramGenerator anagramGenerator = new AnagramGenerator(word);
+        try {
+            anagramGenerator.generateAnagrams();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return new AnagramDTO(word, anagramGenerator.getListAnagrams());
     }
 }

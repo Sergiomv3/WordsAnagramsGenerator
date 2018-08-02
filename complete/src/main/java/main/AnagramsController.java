@@ -12,6 +12,6 @@ public class AnagramsController {
 
     @RequestMapping("/anagram")
     public AnagramDTO anagram(@RequestParam(value="word", defaultValue="Aschheim") String word) {
-        return new AnagramGeneratorImpl().createAnagrams();
+        return new AnagramGeneratorImpl().createAnagrams(word);
     }
 }

@@ -14,5 +14,5 @@ public interface IAnagramGenerator {
      * Perform the generation of anagrams for a given word or phrase
      * @return the given word/s and the generated anagrams
      */
-    public AnagramDTO createAnagrams();
+    public AnagramDTO createAnagrams(String word);
 }
