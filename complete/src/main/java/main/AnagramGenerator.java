@@ -119,10 +119,10 @@ public class AnagramGenerator {
                 break;
             }
             //TODO reduce and use addAnagramsToList method
-            if (auxIndexedInputtedWord.length() == 3) {
+            if (auxIndexedInputtedWord.length() == 3 && (auxIndexedInputtedWord.length() + key.length()) == lengthofIntroducedWord) {
                 if (indexedDictionary.get(auxIndexedInputtedWord) != null) {
                     List<String> listA = indexedDictionary.get(key);
-                    List<String> listB = indexedDictionary.get(auxIndexedInputtedWord); 
+                    List<String> listB = indexedDictionary.get(auxIndexedInputtedWord);
                     for (int i = 0; i < listA.size(); i++) {
                         for (int j = 0; j < listB.size(); j++) {
                             listAnagrams.add(listA.get(i) + " " + listB.get(j));
