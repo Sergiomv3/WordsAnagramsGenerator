@@ -1,4 +1,4 @@
-package dto;
+package com.martin.anagram.dto;
 
 import java.util.List;
 

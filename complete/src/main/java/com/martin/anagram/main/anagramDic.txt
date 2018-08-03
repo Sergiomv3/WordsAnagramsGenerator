@@ -10013,7 +10013,7 @@ confides
 confiding
 confidingly
 configurable
-configuration
+com.martin.anagram.configuration
 configurations
 configure
 configured
@@ -26963,7 +26963,7 @@ interestingly
 interests
 interface
 interfaced
-interfaces
+com.martin.anagram.interfaces
 interfacing
 interfere
 interfered
@@ -30464,7 +30464,7 @@ maimed
 maiming
 maimings
 maims
-main
+com.martin.anagram.main
 mainbrace
 maine
 mainframe
@@ -45540,7 +45540,7 @@ serviceable
 serviced
 serviceman
 servicemen
-services
+com.martin.anagram.services
 servicing
 serviette
 servile

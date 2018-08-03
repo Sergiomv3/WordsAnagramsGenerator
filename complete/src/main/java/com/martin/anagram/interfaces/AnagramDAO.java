@@ -1,6 +1,6 @@
-package interfaces;
+package com.martin.anagram.interfaces;
 
-import dto.AnagramDTO;
+import com.martin.anagram.dto.AnagramDTO;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import java.util.List;
  * @author Sergio Martin
  * @version 1.0
  */
-public interface IAnagramDAO {
+public interface AnagramDAO {
     /**
      * Perform the generation of anagrams for a given word or phrase
      * @return the given word/s and the generated anagrams

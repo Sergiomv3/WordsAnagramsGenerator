@@ -1,4 +1,4 @@
-package utils;
+package com.martin.anagram.utils;
 
 import java.util.HashMap;
 
