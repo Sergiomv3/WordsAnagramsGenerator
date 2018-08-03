@@ -2,9 +2,12 @@ package com.martin.anagram.services;
 
 import com.martin.anagram.dto.AnagramDTO;
 import com.martin.anagram.interfaces.AnagramGenerator;
+import com.martin.anagram.interfaces.DictionaryReader;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.FileNotFoundException;
+import java.util.Set;
 
 /** Implements the inteface AnagramGenerator and generates an AnagramDTO object
  * @author Sergio Martin
@@ -13,14 +16,13 @@ import java.io.FileNotFoundException;
 @Service("anagramGenerator")
 public class AnagramGeneratorImpl implements AnagramGenerator {
 
+    @Autowired
+    DictionaryReader dictionaryReader;
+
     @Override
     public AnagramDTO createAnagrams(String word) {
         com.martin.anagram.main.AnagramGenerator anagramGenerator = new com.martin.anagram.main.AnagramGenerator(word);
-        try {
-            anagramGenerator.generateAnagrams();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        anagramGenerator.generateAnagrams(dictionaryReader.getDictionary());
         return new AnagramDTO(word, anagramGenerator.getListAnagrams());
     }
 }

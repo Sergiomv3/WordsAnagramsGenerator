@@ -2,6 +2,8 @@ package com.martin.anagram.interfaces;
 
 import com.martin.anagram.dto.AnagramDTO;
 
+import java.util.Set;
+
 /**
  * Simple interface for AnagramGeneratorImpl.
  * @author Sergio Martin

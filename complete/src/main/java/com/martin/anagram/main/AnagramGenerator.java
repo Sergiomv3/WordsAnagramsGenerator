@@ -77,7 +77,7 @@ public class AnagramGenerator {
      * Generates all the anagrams possible given word (TODO - replace by recursive method when working)
      * @throws FileNotFoundException if a dictionary isn't found
      */
-    public void generateAnagrams() throws FileNotFoundException {
+    public void generateAnagrams(Set<String> dictionary){
         /**
          * The indexed dictionary (e.g. 'Best Secret' -> 'bceeersstt')
          */
@@ -86,7 +86,7 @@ public class AnagramGenerator {
         listAnagrams = new LinkedList<>();
         root = new TreeNode();
 
-        Set<String> dictionary = readDictionary();
+        //Set<String> dictionary = dictionary; TODO remove this
 
         indexDIctionary(indexedDictionary, dictionary);
 
