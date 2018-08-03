@@ -1,6 +1,5 @@
 package com.martin.anagram.interfaces;
 
-import java.io.FileNotFoundException;
 import java.util.Set;
 
 /**

@@ -3,7 +3,6 @@ package com.martin.anagram.Components;
 import com.martin.anagram.interfaces.DictionaryReader;
 import com.martin.anagram.utils.Constants;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.FileNotFoundException;

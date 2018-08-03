@@ -6,9 +6,6 @@ import com.martin.anagram.interfaces.DictionaryReader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.io.FileNotFoundException;
-import java.util.Set;
-
 /** Implements the inteface AnagramGenerator and generates an AnagramDTO object
  * @author Sergio Martin
  * @version 1.0
