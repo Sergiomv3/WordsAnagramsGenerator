@@ -1,4 +1,4 @@
-package com.martin.anagram.Components;
+package com.martin.anagram.components;
 
 import com.martin.anagram.interfaces.DictionaryReader;
 import com.martin.anagram.utils.Constants;
@@ -35,8 +35,9 @@ public class DictionaryReaderImpl implements DictionaryReader {
         // Read the file using whitespace as a delimiter (default)
         // so that the input will be split into words
         Scanner file = null;
+        ClassLoader classLoader = getClass().getClassLoader();
         try {
-            file = new Scanner(new File(Constants.FILE_PATH_OF_DICTIONARY));
+            file = new Scanner(new File(classLoader.getResource(Constants.FILE_NAME_OF_DICTIONARY).getFile()));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

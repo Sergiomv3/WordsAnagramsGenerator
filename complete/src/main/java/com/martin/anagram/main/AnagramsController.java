@@ -15,8 +15,6 @@ public class AnagramsController {
     @Autowired
     AnagramGenerator anagramGenerator;
 
-
-
     @RequestMapping("/anagram")
     public AnagramDTO anagram(@RequestParam(value="word", defaultValue="Aschheim") String word) throws FileNotFoundException {
 
