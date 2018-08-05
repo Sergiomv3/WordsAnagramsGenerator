@@ -1,4 +1,4 @@
-package com.martin.anagram.main;
+package com.martin.anagram.controller;
 
 import com.martin.anagram.utils.TreeNode;
 
@@ -206,7 +206,7 @@ public class AnagramGenerator {
     private Set<String> readDictionary() throws FileNotFoundException {
         // Read the file using whitespace as a delimiter (default)
         // so that the input will be split into words
-        Scanner file = new Scanner(new File("src\\main\\java\\com\\martin\\anagram\\main\\anagramDic.txt"));
+        Scanner file = new Scanner(new File("src\\controller\\java\\com\\martin\\anagram\\controller\\anagramDic.txt"));
 
         Set<String> dictionary = new HashSet<>();
         // For each word in the input

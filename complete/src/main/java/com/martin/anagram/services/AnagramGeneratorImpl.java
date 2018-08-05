@@ -18,7 +18,7 @@ public class AnagramGeneratorImpl implements AnagramGenerator {
 
     @Override
     public AnagramDTO createAnagrams(String word) {
-        com.martin.anagram.main.AnagramGenerator anagramGenerator = new com.martin.anagram.main.AnagramGenerator(word);
+        com.martin.anagram.controller.AnagramGenerator anagramGenerator = new com.martin.anagram.controller.AnagramGenerator(word);
         anagramGenerator.generateAnagrams(dictionaryReader.getDictionary());
         return new AnagramDTO(word, anagramGenerator.getListAnagrams());
     }

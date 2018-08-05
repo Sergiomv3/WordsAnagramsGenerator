@@ -1,4 +1,4 @@
-package com.martin.anagram.main;
+package com.martin.anagram.controller;
 
 import com.martin.anagram.dto.AnagramDTO;
 import com.martin.anagram.interfaces.AnagramGenerator;

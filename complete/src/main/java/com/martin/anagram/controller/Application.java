@@ -1,4 +1,4 @@
-package com.martin.anagram.main;
+package com.martin.anagram.controller;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
