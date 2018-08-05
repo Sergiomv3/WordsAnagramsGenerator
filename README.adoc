@@ -19,6 +19,6 @@ You can customize the word with an optional `word` parameter in the query string
 http://localhost:8080/anagram?word=Test secret
 ----
 
-But the easiest way to test the app is here! www.sergiomv.com/anagram/ (AVAILABLE SOON!)
+To access to the full application, go to https://github.com/Sergiomv3/WAGFront, clone the repo, and after that run "./mvnw spring-boot:run"
 
-
+The address port is set to 8081 so, go to http://localhost:8081 and the app will be displayed.
