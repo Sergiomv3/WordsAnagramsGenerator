@@ -48,8 +48,6 @@ public class AnagramGenerator {
         return listAnagrams;
     }
 
-
-//TODO - Should move the two below methods?
     private void addWord(String value) {
         // Add all characters from the string to the tree.
         root = new TreeNode();
@@ -74,7 +72,7 @@ public class AnagramGenerator {
     }
 
     /**
-     * Generates all the anagrams possible given word (TODO - replace by recursive method when working)
+     * Generates all the anagrams possible given word (TODO - fix recursive method)
      * @throws FileNotFoundException if a dictionary isn't found
      */
     public void generateAnagrams(Set<String> dictionary){
@@ -86,8 +84,6 @@ public class AnagramGenerator {
         listAnagrams = new LinkedList<>();
         root = new TreeNode();
 
-        //Set<String> dictionary = dictionary; TODO remove this
-
         indexDIctionary(indexedDictionary, dictionary);
 
         String inputtedWord = getWordWithProperlyFormat();
@@ -98,40 +94,6 @@ public class AnagramGenerator {
         //Cut and simplify the dictionary according to the available letters from the inputtedWord
         simplifyDictionaryByInputtedWord(indexedDictionary, indexedInputtedWord);
 
-        //TODO Recursive method should start here
-
-//        for (String key : indexedDictionary.keySet()) {
-//            Map<String, List<String>> auxIndexedDictionary = null;
-//
-//            //Deleting in the indexedInpuutedWord, the letters from every key.
-//            String auxIndexedInputtedWord = reduceWordAccordingToKeyLetters(indexedInputtedWord, key);
-//
-//            while (auxIndexedInputtedWord.length() > 3) {
-//                //copy from last dictionary
-//                if (auxIndexedDictionary == null) {
-//                    auxIndexedDictionary = new HashMap(indexedDictionary);
-//                }
-//                simplifyDictionaryByInputtedWord(auxIndexedDictionary, auxIndexedInputtedWord);
-//
-//                //llamar recursivamente TODO recursive point?
-//                // restante seal >= 3
-//                addAnagramsToList(indexedDictionary, key, auxIndexedDictionary, auxIndexedInputtedWord);
-//                break;
-//            }
-//            //TODO reduce and use addAnagramsToList method
-//            if (auxIndexedInputtedWord.length() == 3 && (auxIndexedInputtedWord.length() + key.length()) == lengthofIntroducedWord) {
-//                if (indexedDictionary.get(auxIndexedInputtedWord) != null) {
-//                    List<String> listA = indexedDictionary.get(key);
-//                    List<String> listB = indexedDictionary.get(auxIndexedInputtedWord);
-//                    for (int i = 0; i < listA.size(); i++) {
-//                        for (int j = 0; j < listB.size(); j++) {
-//                            listAnagrams.add(listA.get(i) + " " + listB.get(j));
-//                        }
-//                    }
-//                }
-//
-//            }
-//        }
         recursiveAnagrammer(indexedInputtedWord, indexedDictionary); //TODO - REPLACE BY A WORKING RECURSIVE METHOD
 
         //Java 8 sorting by lambda
@@ -221,7 +183,7 @@ public class AnagramGenerator {
         return dictionary;
     }
 
-    // TODO THIS RECURSIVE METHOD
+    // TODO FiX THIS RECURSIVE METHOD
     public  void recursiveAnagrammer(String lastWordIndexed, Map<String, List<String>> lastDictionary) {
         Map<String, List<String>> auxLastDictionary = null;
         if (lastWordIndexed.length() >= 3) {
