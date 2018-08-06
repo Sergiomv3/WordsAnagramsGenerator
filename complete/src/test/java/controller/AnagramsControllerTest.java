@@ -28,7 +28,6 @@ public class AnagramsControllerTest {
         anagramGenerator.setDictionaryReader(dictionaryReader);
     }
 
-    //TODO review this method
     @Test
     public void checkIfAnagramsAreCorrect(){
 
