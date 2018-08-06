@@ -1,22 +1,37 @@
 package controller;
 
+import com.martin.anagram.components.DictionaryReaderImpl;
 import com.martin.anagram.dto.AnagramDTO;
+import com.martin.anagram.interfaces.AnagramGenerator;
+import com.martin.anagram.interfaces.DictionaryReader;
 import com.martin.anagram.services.AnagramGeneratorImpl;
+import org.junit.Before;
 import org.junit.Test;
-import org.springframework.web.bind.annotation.RestController;
+import org.junit.runner.RunWith;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.LinkedList;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
-@RestController
+@RunWith(MockitoJUnitRunner.class)
 public class AnagramsControllerTest {
+
+    AnagramGenerator anagramGenerator;
+    DictionaryReader dictionaryReader;
+
+    @Before
+    public void setUp(){
+        anagramGenerator = new AnagramGeneratorImpl();
+        dictionaryReader = new DictionaryReaderImpl();
+        anagramGenerator.setDictionaryReader(dictionaryReader);
+    }
 
     //TODO review this method
     @Test
     public void checkIfAnagramsAreCorrect(){
-        AnagramGeneratorImpl anagramGenerator = new AnagramGeneratorImpl();
+
         List<String> listAnagrams = new LinkedList<>();
         listAnagrams.add("gent its");
         listAnagrams.add("gets nit");
@@ -29,6 +44,6 @@ public class AnagramsControllerTest {
         listAnagrams.add("tins get");
         listAnagrams.add("tits gen");
         AnagramDTO anagramDTO = new AnagramDTO("word", listAnagrams);
-        assertEquals(anagramGenerator.createAnagrams("testing"), anagramDTO);
+        assertTrue((anagramGenerator.createAnagrams("testing")).getListOfAnagrams().equals(anagramDTO.getListOfAnagrams()));
     }
 }

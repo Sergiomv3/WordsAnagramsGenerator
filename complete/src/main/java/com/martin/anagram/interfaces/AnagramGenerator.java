@@ -13,4 +13,8 @@ public interface AnagramGenerator {
      * @return the given word/s and the generated anagrams
      */
     public AnagramDTO createAnagrams(String word);
+
+    DictionaryReader getDictionaryReader();
+
+    void setDictionaryReader(DictionaryReader dictionaryReader);
 }

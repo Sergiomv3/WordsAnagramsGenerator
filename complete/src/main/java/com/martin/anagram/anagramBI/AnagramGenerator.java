@@ -1,4 +1,4 @@
-package com.martin.anagram.controller;
+package com.martin.anagram.anagramBI;
 
 import com.martin.anagram.utils.TreeNode;
 

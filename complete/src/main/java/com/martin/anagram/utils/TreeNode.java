@@ -16,7 +16,7 @@ public class TreeNode {
     }
 
     private boolean word;
-    HashMap<Character, TreeNode> children = new HashMap<>();
+    private HashMap<Character, TreeNode> children = new HashMap<>();
 
     public TreeNode get(char value) {
         // Get anode from the HashMap.
