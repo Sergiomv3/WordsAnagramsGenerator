@@ -43,13 +43,22 @@ The proposal of this project is to develop an application which has to **get the
 Let's see step by step:
 
  - **RESTful Web Service + Spring Boot:** I decided to use Spring Boot because is so fast to develop with this framework. Also, the Spring configuration is simple. **Spring Boot** provides an embed Tomcat, some dependencies to fast build, a don't need to have an XML file for the configuration. 
- About the **RESTful coding and structure**, I designed a **DTO**, that contains two attributes: a String object (the word introduced) and a List of strings (that contains the list of anagrams)
+ 
+ About the **RESTful coding and structure**, I designed a **DTO**, that contains two attributes: a String object (the word introduced) and a List of strings (that contains the list of anagrams).
+ 
 The **AnagramController** class contains a method annotated as **@RequestMapping** with `/anagram`  value. **This is the method that** **returns the DTO** with the corresponding data; the data that the logic of the app solves (calculating the anagrams). The **@RequestParam** needed is the word, provided by **GET** method.
+
 In addition, there is a **@Service**, **AnagramGenerator** that contains the logic that solves the anagrams, in other words, the algorithm. *I know that this algorithm isn't working properly*
+
 Also, I added a **@Component**, **DictionaryReader** that reads the provided dictionary.
 
 - **Spring MVC + Bootstrap:** In this side, as needed, I have implemented the same **DTO** (with a String word and a List of String with the anagrams)
+
 There is a **@Service**, **RequestService**, that manages the request action, and **returns the DTO provided by the RESTful service**
 The controller (**AnagramController**) maps the corresponding view to the received request (in this case, a GET request from http://localhost:8080/anagram).
+
 The **view** is composed by **two very similar HTML documents** (this is the reason due I think that this app should be developed as SPA with Angular).
-The introduced **word** and its corresponding **anagrams** **will be displayed** in the view, supported by a **Bootstrap Framework** that makes easy the **layout**, and the use of JavaScript for the **input validation**. In addition, I have used an external JavaScript alert (SweetAlert) to "beautify" the app design. ***Please, consider that I have implemented this functionality using an external resource, so if you are disconnected from the Internet, it won't work.***
+
+The introduced **word** and its corresponding **anagrams** **will be displayed** in the view, supported by a **Bootstrap Framework** that makes easy the **layout**, and the use of JavaScript for the **input validation**.
+
+In addition, I have used an external JavaScript alert (SweetAlert) to "beautify" the app design. ***Please, consider that I have implemented this functionality using an external resource, so if you are disconnected from the Internet, it won't work.***
