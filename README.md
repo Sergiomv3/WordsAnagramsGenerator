@@ -22,7 +22,7 @@ The address port is set to 8081, hence you have to go to  http://localhost:8081 
 ---
 
 ## Technical side
-The proposal of this project is to develop an application which has to **solve the anagrams** of a given word or phrase, but **these have to be content in a provided dictionary**. There are some **requirements** to develop the project:
+The proposal of this project is to develop an application which has to **get the anagrams** of a given word or phrase, but **these have to be content in a provided dictionary**. There are some **requirements** to develop the project:
 
  - [x] REST service
  - [x] Spring MVC
@@ -32,11 +32,11 @@ The proposal of this project is to develop an application which has to **solve t
  
  ***What have I added?***
  - [x] Bootstrap framework
- - [x] RESTfil Wev Service + **Spring Boot**
+ - [x] RESTful Web Service + **Spring Boot**
 
 ***What else would I like to add or I missed?***
 
- - [ ] AngularJS Framework (this app can be a SPA)
+ - [ ] Angular Framework (this app can be a SPA)
  - [ ] More unit tests
  - [ ] Use more Java 8's utilities
 
@@ -51,5 +51,5 @@ Also, I added a **@Component**, **DictionaryReader** that reads the provided dic
 - **Spring MVC + Bootstrap:** In this side, as needed, I have implemented the same **DTO** (with a String word and a List of String with the anagrams)
 There is a **@Service**, **RequestService**, that manages the request action, and **returns the DTO provided by the RESTful service**
 The controller (**AnagramController**) maps the corresponding view to the received request (in this case, a GET request from http://localhost:8080/anagram).
-The **view** is composed by **two very similar HTML documents** (this is the reason due I think that this app should be developed as SPA with AngularJS)
-The introduced **word** and its corresponding **anagrams** **will be displayed** in the view, supported by a **Bootstrap Framework** that makes easy the **layout**, and the use of JavaScript for the **input validation**. In addition, I have used an external JavaScript alert (SweetAlert) to "beautify" the app design. ***Please, consider that I have implemented this last thing using an external resource, so if you are disconnected from the Internet, it won't work.***
+The **view** is composed by **two very similar HTML documents** (this is the reason due I think that this app should be developed as SPA with Angular).
+The introduced **word** and its corresponding **anagrams** **will be displayed** in the view, supported by a **Bootstrap Framework** that makes easy the **layout**, and the use of JavaScript for the **input validation**. In addition, I have used an external JavaScript alert (SweetAlert) to "beautify" the app design. ***Please, consider that I have implemented this functionality using an external resource, so if you are disconnected from the Internet, it won't work.***
