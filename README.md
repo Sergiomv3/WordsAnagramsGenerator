@@ -9,15 +9,15 @@ You'll get anagrams for a input word or phrase.
 Clone the project, make sure that you have JVM installed, and run `./mvnw spring-boot:run` in a command line promt or powershell.
 
 **After that, you can test the app with the following address:**
-http://localhost:8080/anagram
+http://localhost:8081/anagram
 
 You can do a GET request by using ***word*** param. E.g.:
-[http://localhost:8080/anagram?word=testing](http://localhost:8080/anagram?word=testing)
+[http://localhost:8081/anagram?word=testing](http://localhost:8081/anagram?word=testing)
 
 ---
 To launch the **full application**, go to https://github.com/Sergiomv3/WAGFront, clone the repo, and after that run `./mvnw spring-boot:run`
 
-The address port is set to 8081, hence you have to go to  http://localhost:8081 and the app will be displayed.
+The address port is set to 8080, hence you have to go to  http://localhost:8080 and the app will be displayed.
 
 ---
 
@@ -42,7 +42,7 @@ The proposal of this project is to develop an application which has to **get the
 
 Let's see step by step:
 
- - **RESTful Web Service + Spring Boot:** I decided to use Spring Boot because is so fast to develop with this framework. Also, the Spring configuration is simple. **Spring Boot** provides an embed Tomcat, some dependencies to fast build, a don't need to have an XML file for the configuration. 
+ - **RESTful Web Service + Spring Boot:** I decided to use Spring Boot because is so fast to develop with this framework. Also, the Spring configuration is simple. **Spring Boot** provides an embedded Tomcat, some dependencies to fast build, a don't need to have an XML file for the configuration. 
  
  About the **RESTful coding and structure**, I designed a **DTO**, that contains two attributes: a String object (the word introduced) and a List of strings (that contains the list of anagrams).
  
@@ -57,7 +57,7 @@ Also, I added a **@Component**, **DictionaryReader** that reads the provided dic
 There is a **@Service**, **RequestService**, that manages the request action, and **returns the DTO provided by the RESTful service**
 The controller (**AnagramController**) maps the corresponding view to the received request (in this case, a GET request from http://localhost:8080/anagram).
 
-The **view** is composed by **two very similar HTML documents** (this is the reason due I think that this app should be developed as SPA with Angular).
+The **view** is composed of **two very similar HTML documents** (this is the reason due I think that this app should be developed as SPA with Angular).
 
 The introduced **word** and its corresponding **anagrams** **will be displayed** in the view, supported by a **Bootstrap Framework** that makes easy the **layout**, and the use of JavaScript for the **input validation**.
 
